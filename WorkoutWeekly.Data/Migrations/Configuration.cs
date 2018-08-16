@@ -10,7 +10,6 @@ namespace WorkoutWeekly.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WorkoutWeekly.Data.ApplicationDbContext";
         }
 
         protected override void Seed(WorkoutWeekly.Data.ApplicationDbContext context)

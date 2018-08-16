@@ -54,16 +54,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201808152020268_InitialCreate.cs" />
-    <Compile Include="Migrations\201808152020268_InitialCreate.Designer.cs">
-      <DependentUpon>201808152020268_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201808161416276_update.cs" />
+    <Compile Include="Migrations\201808161416276_update.Designer.cs">
+      <DependentUpon>201808161416276_update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808152025310_initial.cs" />
-    <Compile Include="Migrations\201808152025310_initial.Designer.cs">
-      <DependentUpon>201808152025310_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201808161446342_name.cs" />
+    <Compile Include="Migrations\201808161446342_name.Designer.cs">
+      <DependentUpon>201808161446342_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808161521384_name1.cs" />
+    <Compile Include="Migrations\201808161521384_name1.Designer.cs">
+      <DependentUpon>201808161521384_name1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808161705282_rest.cs" />
+    <Compile Include="Migrations\201808161705282_rest.Designer.cs">
+      <DependentUpon>201808161705282_rest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Yoga.cs" />
+    <Compile Include="Workout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,11 +79,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808152020268_InitialCreate.resx">
-      <DependentUpon>201808152020268_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808161416276_update.resx">
+      <DependentUpon>201808161416276_update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808152025310_initial.resx">
-      <DependentUpon>201808152025310_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808161446342_name.resx">
+      <DependentUpon>201808161446342_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161521384_name1.resx">
+      <DependentUpon>201808161521384_name1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161705282_rest.resx">
+      <DependentUpon>201808161705282_rest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

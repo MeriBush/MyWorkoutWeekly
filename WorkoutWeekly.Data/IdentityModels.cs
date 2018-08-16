@@ -32,7 +32,7 @@ namespace WorkoutWeekly.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Yoga> YogaWorkouts { get; set; }
+        public DbSet<Workout> Workouts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

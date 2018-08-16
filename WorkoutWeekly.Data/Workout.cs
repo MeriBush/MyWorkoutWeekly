@@ -7,19 +7,27 @@ using System.Threading.Tasks;
 
 namespace WorkoutWeekly.Data
 {
-    public class Yoga
+    public enum WorkoutEnum
+    {
+        Pilates, Jogging, Yoga, HIIT, Rest
+    }
+
+    public class Workout
     {
         [Key]
-        public int YogaWorkoutId { get; set; }
+        public int WorkoutId { get; set; }
 
         [Required]
         public Guid UserId { get; set; }
 
         [Required]
-        public string YogaWorkoutTitle { get; set; }
+        public WorkoutEnum WorkoutType { get; set; }
 
         [Required]
-        public string YogaWorkout { get; set; }
+        public string WorkoutTitle { get; set; }
+
+        [Required]
+        public string WorkoutDetails { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

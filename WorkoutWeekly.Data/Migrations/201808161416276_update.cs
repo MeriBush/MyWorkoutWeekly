@@ -3,7 +3,7 @@ namespace WorkoutWeekly.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class update : DbMigration
     {
         public override void Up()
         {
@@ -78,17 +78,18 @@ namespace WorkoutWeekly.Data.Migrations
                 .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
-                "dbo.Yoga",
+                "dbo.Workouts",
                 c => new
                     {
-                        YogaWorkoutId = c.Int(nullable: false, identity: true),
+                        WorkoutId = c.Int(nullable: false, identity: true),
                         UserId = c.Guid(nullable: false),
-                        YogaWorkoutTitle = c.String(nullable: false),
-                        YogaWorkout = c.String(nullable: false),
+                        WorkoutType = c.Int(nullable: false),
+                        WorkoutTitle = c.String(nullable: false),
+                        Workout = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
-                .PrimaryKey(t => t.YogaWorkoutId);
+                .PrimaryKey(t => t.WorkoutId);
             
         }
         
@@ -102,7 +103,7 @@ namespace WorkoutWeekly.Data.Migrations
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropTable("dbo.Yoga");
+            DropTable("dbo.Workouts");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");

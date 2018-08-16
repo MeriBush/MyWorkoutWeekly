@@ -7,13 +7,13 @@ namespace WorkoutWeekly.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class name : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(name));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808152025310_initial"; }
+            get { return "201808161446342_name"; }
         }
         
         string IMigrationMetadata.Source

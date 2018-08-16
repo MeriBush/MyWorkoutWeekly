@@ -53,12 +53,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="WorkoutService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkoutWeekly.Data\WorkoutWeekly.Data.csproj">
+      <Project>{4dfe8482-93d6-4097-8c43-ceaf9325c3ff}</Project>
+      <Name>WorkoutWeekly.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkoutWeekly.Models\WorkoutWeekly.Models.csproj">
+      <Project>{060fa645-4752-4d48-9915-3d458aa6f471}</Project>
+      <Name>WorkoutWeekly.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
