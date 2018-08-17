@@ -32,12 +32,24 @@ namespace WorkoutWeekly.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
+            var service = CreateWorkoutService();
+
+            if (service.CreateWorkout(model))
+            {
+                TempData["SaveResult"] = "Your workout was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Workout could not be created");
+
+            return View(model);
+        }
+
+        private WorkoutService CreateWorkoutService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new WorkoutService(userId);
-
-            service.CreateWorkout(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
