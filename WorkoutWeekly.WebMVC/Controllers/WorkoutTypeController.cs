@@ -21,5 +21,14 @@ namespace WorkoutWeekly.WebMVC.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(WorkoutTypeCreate model)
+        {
+            if (ModelState.IsValid)
+            { }
+            return View(model);
+        }
     }
 }
