@@ -54,42 +54,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201808161416276_update.cs" />
-    <Compile Include="Migrations\201808161416276_update.Designer.cs">
-      <DependentUpon>201808161416276_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808161446342_name.cs" />
-    <Compile Include="Migrations\201808161446342_name.Designer.cs">
-      <DependentUpon>201808161446342_name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808161521384_name1.cs" />
-    <Compile Include="Migrations\201808161521384_name1.Designer.cs">
-      <DependentUpon>201808161521384_name1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808161705282_rest.cs" />
-    <Compile Include="Migrations\201808161705282_rest.Designer.cs">
-      <DependentUpon>201808161705282_rest.cs</DependentUpon>
+    <Compile Include="Migrations\201808190212382_workouttype.cs" />
+    <Compile Include="Migrations\201808190212382_workouttype.Designer.cs">
+      <DependentUpon>201808190212382_workouttype.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Schedule.cs" />
     <Compile Include="Workout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808161416276_update.resx">
-      <DependentUpon>201808161416276_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808161446342_name.resx">
-      <DependentUpon>201808161446342_name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808161521384_name1.resx">
-      <DependentUpon>201808161521384_name1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808161705282_rest.resx">
-      <DependentUpon>201808161705282_rest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808190212382_workouttype.resx">
+      <DependentUpon>201808190212382_workouttype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,7 +32,7 @@ namespace WorkoutWeekly.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Workouts.Add(entity);
+                ctx.Workout.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -43,7 +43,7 @@ namespace WorkoutWeekly.Services
             {
                 var query =
                     ctx
-                        .Workouts
+                        .Workout
                         .Where(e => e.UserId == _userId)
                         .Select(
                             e =>

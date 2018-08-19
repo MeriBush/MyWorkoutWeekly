@@ -3,7 +3,7 @@ namespace WorkoutWeekly.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class update : DbMigration
+    public partial class workouttype : DbMigration
     {
         public override void Up()
         {
@@ -30,6 +30,15 @@ namespace WorkoutWeekly.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.Schedule",
+                c => new
+                    {
+                        ScheduleID = c.Int(nullable: false, identity: true),
+                        Day = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ScheduleID);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -78,18 +87,27 @@ namespace WorkoutWeekly.Data.Migrations
                 .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
-                "dbo.Workouts",
+                "dbo.Workout",
                 c => new
                     {
                         WorkoutId = c.Int(nullable: false, identity: true),
                         UserId = c.Guid(nullable: false),
                         WorkoutType = c.Int(nullable: false),
                         WorkoutTitle = c.String(nullable: false),
-                        Workout = c.String(nullable: false),
+                        WorkoutDetails = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.WorkoutId);
+            
+            CreateTable(
+                "dbo.WorkoutType",
+                c => new
+                    {
+                        WorkoutTypeID = c.Int(nullable: false, identity: true),
+                        Type = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.WorkoutTypeID);
             
         }
         
@@ -103,10 +121,12 @@ namespace WorkoutWeekly.Data.Migrations
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropTable("dbo.Workouts");
+            DropTable("dbo.WorkoutType");
+            DropTable("dbo.Workout");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
+            DropTable("dbo.Schedule");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
         }
