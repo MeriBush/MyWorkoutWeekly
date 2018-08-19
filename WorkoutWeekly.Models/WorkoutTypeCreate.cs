@@ -5,17 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkoutWeekly.Data
+namespace WorkoutWeekly.Models
 {
-    public class WorkoutType
+    public class WorkoutTypeCreate
     {
-        [Key]
-        public int WorkoutTypeId { get; set; }
-
         [Required]
-        public Guid UserId { get; set; }
-
-        [Required]
+        [Display(Name ="Exericse Type")]
         public string Type { get; set; }
     }
 }

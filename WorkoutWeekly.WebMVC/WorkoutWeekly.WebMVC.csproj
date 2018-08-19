@@ -198,6 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WorkoutController.cs" />
+    <Compile Include="Controllers\WorkoutTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,6 +268,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Workout\Create.cshtml" />
     <Content Include="Views\Workout\Index.cshtml" />
+    <Content Include="Views\WorkoutType\Index.cshtml" />
+    <Content Include="Views\WorkoutType\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

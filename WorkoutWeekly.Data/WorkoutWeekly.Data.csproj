@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201808190212382_workouttype.Designer.cs">
       <DependentUpon>201808190212382_workouttype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808192126272_update.cs" />
+    <Compile Include="Migrations\201808192126272_update.Designer.cs">
+      <DependentUpon>201808192126272_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="Workout.cs" />
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808190212382_workouttype.resx">
       <DependentUpon>201808190212382_workouttype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808192126272_update.resx">
+      <DependentUpon>201808192126272_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

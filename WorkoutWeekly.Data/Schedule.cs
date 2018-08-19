@@ -15,7 +15,10 @@ namespace WorkoutWeekly.Data
     public class Schedule
     {
         [Key]
-        public int ScheduleID { get; set; }
+        public int ScheduleId { get; set; }
+
+        [Required]
+        public Guid UserId { get; set; }
 
         [Required]
         public DaysOfWeek Day { get; set; }
