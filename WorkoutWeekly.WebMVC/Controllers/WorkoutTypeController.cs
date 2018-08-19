@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WorkoutWeekly.Models;
+using WorkoutWeekly.Services;
 
 namespace WorkoutWeekly.WebMVC.Controllers
 {
@@ -13,7 +15,9 @@ namespace WorkoutWeekly.WebMVC.Controllers
         // GET: WorkoutType
         public ActionResult Index()
         {
-            var model = new WorkoutTypeListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkoutTypeService(userId);
+            var model = service.GetWorkoutTypes();
             return View(model);
         }
 
@@ -26,9 +30,22 @@ namespace WorkoutWeekly.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(WorkoutTypeCreate model)
         {
-            if (ModelState.IsValid)
-            { }
-            return View(model);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var service = CreateWorkoutTypeService();
+
+            service.CreateWorkoutType(model);
+            return RedirectToAction("Index");
+        }
+
+        private WorkoutTypeService CreateWorkoutTypeService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkoutTypeService(userId);
+            return service;
         }
     }
 }
