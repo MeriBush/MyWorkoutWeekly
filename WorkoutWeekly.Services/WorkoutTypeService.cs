@@ -51,5 +51,40 @@ namespace WorkoutWeekly.Services
                 return query.ToArray();
             }
         }
+
+        public WorkoutTypeDetail GetWorkoutTypeById(int workoutTypeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .WorkoutType
+                    .Single(e => e.WorkoutTypeId == workoutTypeId && e.UserId == _userId);
+                return
+                    new WorkoutTypeDetail
+                    {
+                        WorkoutTypeId = entity.WorkoutTypeId,
+                        Type = entity.Type,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
+
+        public bool UpdateWorkoutType(WorkoutTypeEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .WorkoutType
+                    .Single(e => e.WorkoutTypeId == model.WorkoutTypeId && e.UserId == model._userId);
+
+                entity.Type = model.Type;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

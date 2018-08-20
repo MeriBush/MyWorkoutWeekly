@@ -5,22 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkoutWeekly.Data
+namespace WorkoutWeekly.Models
 {
-    public class WorkoutType
+    public class WorkoutTypeDetail
     {
-        [Key]
         public int WorkoutTypeId { get; set; }
-
-        [Required]
-        public Guid UserId { get; set; }
-
-        [Required]
         public string Type { get; set; }
 
-        [Required]
+        [Display(Name ="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
+        [Display(Name ="Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
+        public override string ToString() => $"[{WorkoutTypeId}] {Type}";
     }
 }

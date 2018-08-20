@@ -47,6 +47,27 @@ namespace WorkoutWeekly.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateWorkoutTypeService();
+            var model = svc.GetWorkoutTypeById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit (int id)
+        {
+            var service = CreateWorkoutTypeService();
+            var detail = service.GetWorkoutTypeById(id);
+            var model =
+                new WorkoutTypeEdit
+                {
+                    WorkoutTypeId = detail.WorkoutTypeId,
+                    Type = detail.Type
+                };
+            return View(model);
+        }
+
         private WorkoutTypeService CreateWorkoutTypeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
