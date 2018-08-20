@@ -37,8 +37,14 @@ namespace WorkoutWeekly.WebMVC.Controllers
 
             var service = CreateWorkoutTypeService();
 
-            service.CreateWorkoutType(model);
-            return RedirectToAction("Index");
+            if (service.CreateWorkoutType(model))
+            {
+                TempData["SaveResult"] = "New Exercise Type created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Exercise Type could not be created");
+            return View(model);
         }
 
         private WorkoutTypeService CreateWorkoutTypeService()
